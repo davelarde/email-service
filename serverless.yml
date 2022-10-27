@@ -28,3 +28,4 @@ provider:
 functions:
   send-email:
     handler: handler.sendEmail
+    url: true
