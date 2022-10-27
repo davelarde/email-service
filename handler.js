@@ -5,7 +5,7 @@ const ses = new AWS.SES({ region: 'us-west-2' });
 module.exports.sendEmail = async (event) => {
   const params = {
     Destination: {
-      ToAddresses: ['example@example.com'], // This should be your email address
+      ToAddresses: ['wallace.preston@gmail.com'], // This should be your email address
     },
     Message: {
       Body: {
@@ -17,7 +17,7 @@ module.exports.sendEmail = async (event) => {
         Data: 'Hello from Lambda',
       },
     },
-    Source: 'example@example.com', // This can be any email address, the email you want to show as the "sender" when the email is received
+    Source: 'wallace.preston@gmail.com', // This can be any email address, the email you want to show as the "sender" when the email is received
   };
   await ses.sendEmail(params).promise();
   return {
