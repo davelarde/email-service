@@ -1,6 +1,6 @@
 'use strict';
 const AWS = require('aws-sdk');
-const ses = new AWS.SES({ region: 'us-west-2' });
+const ses = new AWS.SES({ region: 'us-east-1' });
 
 module.exports.sendEmail = async (event) => {
   // select from the query parameters
@@ -33,7 +33,7 @@ module.exports.sendEmail = async (event) => {
         Data: subject,
       },
     },
-    Source: 'wallace.preston@gmail.com', // The email you want to show as the "sender" when the email is received.  This must be added as an identity via the AWS SES console and verified.
+    Source: 'danielavelarde4@gmail.com', // The email you want to show as the "sender" when the email is received.  This must be added as an identity via the AWS SES console and verified.
   };
   await ses.sendEmail(params).promise();
   return {
